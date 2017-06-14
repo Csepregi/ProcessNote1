@@ -126,6 +126,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "details";
             this.button3.UseVisualStyleBackColor = true;
+           
             // 
             // Form1
             // 

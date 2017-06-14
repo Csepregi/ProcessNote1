@@ -50,7 +50,7 @@ namespace ProcessNote
 
                 ListViewItem item = new ListViewItem(process.ProcessName);
                 item.SubItems.Add(process.Id.ToString());
-               
+
                 item.Tag = process;
                 listView1.Items.Add(item);
             }
@@ -69,18 +69,25 @@ namespace ProcessNote
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listView2.Items.Clear();
+           
+            
+
+            
+            //listView2.Items.Clear();
             //listView2.FullRowSelect = true;
             Process[] processList = Process.GetProcesses();
+
+            
             foreach (Process process in processList)
             {
 
 
                 ListViewItem item = new ListViewItem();
+
                 //item.SubItems.Add(process.PagedMemorySize64.ToString());
                 item.SubItems.Add((DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime()).ToString());
 
-                //item.SubItems.Add((System.Diagnostics.Process.GetProcessesByName(process.ProcessName).FirstOrDefault().StartTime).ToString());
+
                 item.SubItems.Add(Process.GetCurrentProcess().StartTime.ToString());
 
 
@@ -88,8 +95,10 @@ namespace ProcessNote
                 listView2.Items.Add(item);
                 //listView2.Items.Add((process.PagedMemorySize64.ToString()));
                 //listView2.Items.Add((DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime()).ToString());
-            }            
+            }
         }
+
+        
     }
 }
  
